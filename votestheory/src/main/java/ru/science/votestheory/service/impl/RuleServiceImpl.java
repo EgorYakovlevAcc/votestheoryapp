@@ -20,4 +20,24 @@ public class RuleServiceImpl implements RuleService {
     public void delete(Rule rule) {
             ruleRepository.delete(rule);
     }
+
+    @Override
+    public void addRule() {
+        Rule rule = new Rule();
+        ruleRepository.save(rule);
+    }
+
+
+    @Override
+    public void editRule(Rule rule) {
+        Rule oldRule = ruleRepository.findRuleById(rule.getId());
+        oldRule.setName(rule.getName());
+        oldRule.setConfiguration(rule.getConfiguration());
+        ruleRepository.save(oldRule);
+    }
+
+    @Override
+    public void deleteRule(Long id) {
+        ruleRepository.deleteById(id);
+    }
 }

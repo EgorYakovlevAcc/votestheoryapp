@@ -21,4 +21,5 @@ public class Rule {
     @OneToMany(mappedBy = "rule",cascade = CascadeType.ALL)
     private List<Society> societies;
     private String name;
+    private String configuration;
 }
