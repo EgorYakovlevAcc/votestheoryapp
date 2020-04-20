@@ -23,4 +23,5 @@ public class Participant {
     @JoinColumn(name = "group_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Group group;
+    private Double fund;
 }

@@ -20,10 +20,12 @@ public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String name;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "society_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Society society;
     @OneToMany(mappedBy = "group", cascade=CascadeType.ALL)
     private List<Participant> participants;
+    private boolean isEgoistsGroup;
 }

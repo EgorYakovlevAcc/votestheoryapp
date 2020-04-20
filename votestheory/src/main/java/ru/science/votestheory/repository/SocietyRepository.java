@@ -6,5 +6,5 @@ import ru.science.votestheory.model.Society;
 
 @Repository
 public interface SocietyRepository extends JpaRepository<Society, Long> {
-    Society findSocietiesById(Long id);
+    Society findSocietyById(Long id);
 }
